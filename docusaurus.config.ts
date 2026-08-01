@@ -25,6 +25,7 @@ const config: Config = {
   organizationName: 'sekta2', // Usually your GitHub org/user name.
   projectName: 'stek-docs', // Usually your repo name.
   deploymentBranch: 'gh-pages',
+  trailingSlash: true,
 
   onBrokenLinks: 'throw',
 
