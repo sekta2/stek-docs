@@ -9,6 +9,32 @@ const config: Config = {
   tagline: 'JMod JMod JMod',
   favicon: 'img/favicon.ico',
 
+  // Google Fonts: Inter (UI) + JetBrains Mono (code)
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://fonts.googleapis.com',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com',
+        crossorigin: 'anonymous',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap',
+      },
+    },
+  ],
+
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
@@ -33,8 +59,8 @@ const config: Config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'ru',
+    locales: ['ru'],
   },
 
   presets: [
@@ -43,26 +69,13 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          // Serve the docs at the site's root
+          routeBasePath: '/',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/sekta2/stek-docs/tree/master/',
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -72,7 +85,7 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/logo.svg',
     colorMode: {
       respectPrefersColorScheme: true,
     },
@@ -82,7 +95,14 @@ const config: Config = {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
       },
-      items: [],
+      items: [
+        {
+          href: 'https://github.com/sekta2/stek',
+          position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
+        },
+      ],
     },
     footer: {
       style: 'dark',
