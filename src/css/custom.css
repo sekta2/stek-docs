@@ -33,6 +33,21 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+.token.keyword,
+.token.variable {
+  font-style: normal !important;
+}
+
+.code-token-link {
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.code-token-link:hover {
+  text-decoration: underline solid;
+}
+
 .header-github-link:hover {
   opacity: 0.6;
 }

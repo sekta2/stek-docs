@@ -9,7 +9,6 @@ const config: Config = {
   tagline: 'JMod JMod JMod',
   favicon: 'img/favicon.ico',
 
-  // Google Fonts: Inter (UI) + JetBrains Mono (code)
   headTags: [
     {
       tagName: 'link',
@@ -69,13 +68,14 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Serve the docs at the site's root
           routeBasePath: '/',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: 'https://github.com/sekta2/stek-docs/tree/master/',
         },
-        blog: false,
+        blog: {
+          showReadingTime: true,
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -96,6 +96,8 @@ const config: Config = {
         src: 'img/logo.svg',
       },
       items: [
+        {to: '/', label: 'Документация', position: 'left'},
+        {to: '/blog/', label: 'Блог', position: 'left'},
         {
           href: 'https://github.com/sekta2/stek',
           position: 'right',
@@ -112,6 +114,7 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+      additionalLanguages: ['lua', 'bash', 'batch', 'powershell'],
     },
   } satisfies Preset.ThemeConfig,
 };
